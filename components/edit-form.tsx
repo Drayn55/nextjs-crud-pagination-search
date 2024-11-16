@@ -2,7 +2,7 @@
 
 import { updateContact } from "@/lib/action";
 import { useActionState } from "react";
-import { SubmitButton } from "./buttons";
+import { RedirectButton, SubmitButton } from "./buttons";
 import type { Contact } from "@prisma/client";
 
 const UpdateForm = ({ contact }: { contact: Contact }) => {
@@ -53,7 +53,8 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
         <div id="message-error" aria-live="polite" aria-atomic="true">
           <p className="mt-2 text-sm text-red-500">{state?.message}</p>
         </div>
-       <SubmitButton label="update"/>
+        <SubmitButton label="update" />
+        <RedirectButton/>
       </form>
     </div>
   );

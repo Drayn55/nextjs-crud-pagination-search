@@ -30,8 +30,20 @@ export const EditButton = ({ id }: { id: string }) => {
 };
 
 
+export const RedirectButton = () => {
+
+  return (
+    <Link href={"/contacts"} className="text-white block mt-5 bg-blue-700 hover:bg-blue-800 font-medium rounded-sm text-sm w-full px-5 py-3 text-center">
+      Return
+    </Link>
+  );
+};
+
+
+
+
 export const DeleteButton = ({ id }: { id: string }) => {
-  const DeleteContactWithId = async (formData: FormData) => {
+  const DeleteContactWithId = async () => {
       await deleteContact(id);
   };
 

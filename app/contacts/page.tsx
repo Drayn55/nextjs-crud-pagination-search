@@ -9,13 +9,16 @@ import { Suspense } from "react";
 const Contacts = async ({
   searchParams,
 }: {
-  searchParams?: {
+  searchParams: Promise<{
     query?: string;
     page?: number;
-  };
+  }>;
 }) => {
-  const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) || 1;
+  // Tunggu searchParams sebelum mengakses propertinya
+  const params = await searchParams;
+
+  const query = params?.query || "";
+  const currentPage = Number(params?.page) || 1;
 
   const totalPages = await getContactPages(query);
 

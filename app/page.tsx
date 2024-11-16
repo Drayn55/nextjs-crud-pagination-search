@@ -1,7 +1,11 @@
+import { RedirectButton } from "@/components/buttons";
 
 export default function Home() {
   return (
-   <h1 className="text-2xl">Home gep</h1>
+    <>
+      {/* <h1 className="text-2xl">kalau mau ke aplikasinya tambahin /contacts</h1> */}
+      <RedirectButton /></>
+    
   );
 }
 

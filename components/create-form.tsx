@@ -2,7 +2,7 @@
 
 import { saveContact } from "@/lib/action";
 import { useActionState } from "react";
-import { SubmitButton } from "./buttons";
+import { RedirectButton, SubmitButton } from "./buttons";
 
 const CreateForm = () => {
   const [state, formAction] = useActionState(saveContact, null);
@@ -49,7 +49,8 @@ const CreateForm = () => {
         <div id="message-error" aria-live="polite" aria-atomic="true">
           <p className="mt-2 text-sm text-red-500">{state?.message}</p>
         </div>
-       <SubmitButton label="save"/>
+        <SubmitButton label="save" />
+        <RedirectButton/>
       </form>
     </div>
   );
