@@ -7,8 +7,6 @@ import { TableSkeleton } from "@/components/skeleton";
 import { getContactPages } from "@/lib/data";
 import { Suspense } from "react";
 
-/* eslint-disable jsx-a11y/html-has-lang */
-
 const Contacts = async ({
   searchParams,
 }: {
@@ -17,35 +15,49 @@ const Contacts = async ({
     page?: number;
   }>;
 }) => {
-  // Tunggu searchParams sebelum mengakses propertinya
-  const params = await searchParams;
+  // // Tunggu searchParams sebelum mengakses propertinya
+  // const params = await searchParams;
 
-  const query = params?.query || "";
-  const currentPage = Number(params?.page) || 1;
+  // const query = params?.query || "";
+  // const currentPage = Number(params?.page) || 1;
 
-  const totalPages = await getContactPages(query);
-  
-  
+  // const totalPages = await getContactPages(query);
 
   return (
-    <section className="max-w-screen-lg mx-auto mt-5 px-4">
-      <h1>ok</h1>
-     {/* <Header/>
-      <div className="flex items-center justify-between gap-1 mb-5">
-        <Search />
-        <CreateButton />
-      </div>
-      <div className="overflow-auto">
-        <Suspense key={query + currentPage} fallback={<TableSkeleton />}>
-          <ContactTable query={query} currentPage={currentPage} />
-        </Suspense>
-      </div>
+    <>
+      <html lang="en">
+        <head>
+          <meta charSet="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Document</title>
+        </head>
+        <body>
+          <h1>ok</h1>
+        </body>
+      </html>
+    </>
 
-      <div className="flex justify-center mt-4">
-        <Pagination totalPages={totalPages} />
-      </div> */}
+    // <section className="max-w-screen-lg mx-auto mt-5 px-4">
+    // {/* <h1>ok</h1> */}
+    //  {/* <Header/>
+    //   <div className="flex items-center justify-between gap-1 mb-5">
+    //     <Search />
+    //     <CreateButton />
+    //   </div>
+    //   <div className="overflow-auto">
+    //     <Suspense key={query + currentPage} fallback={<TableSkeleton />}>
+    //       <ContactTable query={query} currentPage={currentPage} />
+    //     </Suspense>
+    //   </div>
 
-    </section>
+    //   <div className="flex justify-center mt-4">
+    //     <Pagination totalPages={totalPages} />
+    //   </div> */}
+
+    // {/* </section> */}
   );
 };
 
