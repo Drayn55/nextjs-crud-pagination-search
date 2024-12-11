@@ -30,8 +30,8 @@ export default function Home() {
         desc: "Lorem Ipsum is simply dummy text of the printing",
         href: "#"
     }
-]
-
+  ]
+    
 return (
     <>
         <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">

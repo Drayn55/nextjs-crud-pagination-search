@@ -13,10 +13,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Apps mhs",
-  description: "yo guys",
-};
+// export const metadata: Metadata = {
+//   title: "Apps mhs",
+//   description: "yo guys",
+// };
 
 export default function RootLayout({
   children,
@@ -24,8 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    // <!DOCTYPE html>
+    <html lang="en">
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Apps mhs</title>
       </head>
       <body

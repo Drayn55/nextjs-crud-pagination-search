@@ -1,5 +1,5 @@
 import { getContacts } from "@/lib/data";
-import { formatDate } from "@/lib/utils";
+// import { formatDate } from "@/lib/utils";
 import { DeleteButton, EditButton, ReadButton } from "./buttons";
 
 const ContactTable = async ({
