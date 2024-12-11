@@ -36,19 +36,19 @@ const Contacts = async ({
         <body>
           <section className="max-w-screen-lg mx-auto mt-5 px-4">
             {/* <h1>ok</h1> */}
-            <Header />
+            {/* <Header /> */}
             <div className="flex items-center justify-between gap-1 mb-5">
-              <Search />
-              <CreateButton />
+              {/* <Search /> */}
+              {/* <CreateButton /> */}
             </div>
             <div className="overflow-auto">
-              <Suspense key={query + currentPage} fallback={<TableSkeleton />}>
+              {/* <Suspense key={query + currentPage} fallback={<TableSkeleton />}> */}
                 {/* <ContactTable query={query} currentPage={currentPage} /> */}
-              </Suspense>
+              {/* </Suspense> */}
             </div>
 
             <div className="flex justify-center mt-4">
-              <Pagination totalPages={totalPages} />
+              {/* <Pagination totalPages={totalPages} /> */}
             </div>
           </section>
         </body>
