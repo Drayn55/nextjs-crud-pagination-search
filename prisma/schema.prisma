@@ -8,13 +8,14 @@ generator client {
   provider = "prisma-client-js"
 }
 
+
 datasource db {
-  provider = "mongodb"
-  url      = env("MONGODB_URL") // Ganti dengan URL MongoDB Anda
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
 }
 
 model Contact {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(cuid())
   name      String
   phone     String
   nim       String?

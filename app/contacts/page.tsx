@@ -20,7 +20,7 @@ const Contacts = async ({
   const query = params?.query || "";
   const currentPage = Number(params?.page) || 1;
 
-  // const totalPages = await getContactPages(query);
+  const totalPages = await getContactPages(query);
 
   return (
     <>
@@ -48,7 +48,7 @@ const Contacts = async ({
             </div>
 
             <div className="flex justify-center mt-4">
-              {/* <Pagination totalPages={totalPages} /> */}
+              <Pagination totalPages={totalPages} />
             </div>
           </section>
         </body>
