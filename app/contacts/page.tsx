@@ -15,13 +15,12 @@ const Contacts = async ({
     page?: number;
   }>;
 }) => {
-  // // Tunggu searchParams sebelum mengakses propertinya
-  // const params = await searchParams;
+  const params = await searchParams;
 
-  // const query = params?.query || "";
-  // const currentPage = Number(params?.page) || 1;
+  const query = params?.query || "";
+  const currentPage = Number(params?.page) || 1;
 
-  // const totalPages = await getContactPages(query);
+  const totalPages = await getContactPages(query);
 
   return (
     <>
@@ -35,29 +34,26 @@ const Contacts = async ({
           <title>Document</title>
         </head>
         <body>
-          <h1>ok</h1>
+          <section className="max-w-screen-lg mx-auto mt-5 px-4">
+            <h1>ok</h1>
+            <Header />
+            <div className="flex items-center justify-between gap-1 mb-5">
+              <Search />
+              <CreateButton />
+            </div>
+            <div className="overflow-auto">
+              <Suspense key={query + currentPage} fallback={<TableSkeleton />}>
+                <ContactTable query={query} currentPage={currentPage} />
+              </Suspense>
+            </div>
+
+            <div className="flex justify-center mt-4">
+              <Pagination totalPages={totalPages} />
+            </div>
+          </section>
         </body>
       </html>
     </>
-
-    // <section className="max-w-screen-lg mx-auto mt-5 px-4">
-    // {/* <h1>ok</h1> */}
-    //  {/* <Header/>
-    //   <div className="flex items-center justify-between gap-1 mb-5">
-    //     <Search />
-    //     <CreateButton />
-    //   </div>
-    //   <div className="overflow-auto">
-    //     <Suspense key={query + currentPage} fallback={<TableSkeleton />}>
-    //       <ContactTable query={query} currentPage={currentPage} />
-    //     </Suspense>
-    //   </div>
-
-    //   <div className="flex justify-center mt-4">
-    //     <Pagination totalPages={totalPages} />
-    //   </div> */}
-
-    // {/* </section> */}
   );
 };
 

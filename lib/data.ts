@@ -88,7 +88,7 @@ export const getContactPages = async (query: string) => {
 export const getContactCount = async () => {
   try {
     const count = await prisma.contact.count();
-    // console.log('Jumlah total kontak:', count); // Menampilkan jumlah kontak di console
+    // console.log('Jumlah total kontak:', count);
     return count;
   } catch (error) {
     console.error('Error fetching contact count:', error);
