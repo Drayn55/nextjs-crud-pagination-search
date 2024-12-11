@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default () => {
+export default function NotFound() => {
 
     const navigations = [
         {
