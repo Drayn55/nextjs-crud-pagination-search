@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default () => {
+const NotFound = () => {
 
     const navigations = [
         {
@@ -10,7 +10,7 @@ export default () => {
                 </svg>,
             title: "Resources",
             desc: "Lorem Ipsum is simply dummy text of the printing",
-            href: "javascript:void(0)"
+            href: "#"
         },
         {
             icon:
@@ -19,7 +19,7 @@ export default () => {
                 </svg>,
             title: "Guides",
             desc: "Lorem Ipsum is simply dummy text of the printing",
-            href: "javascript:void(0)"
+            href: "#"
         },
         {
             icon:
@@ -28,7 +28,7 @@ export default () => {
                 </svg>,
             title: "Support",
             desc: "Lorem Ipsum is simply dummy text of the printing",
-            href: "javascript:void(0)"
+            href: "#"
         }
     ]
 
@@ -103,3 +103,5 @@ export default () => {
     </main>
   );
 }
+
+export default NotFound;

@@ -10,7 +10,7 @@ export default function Home() {
             </svg>,
         title: "Resources",
         desc: "Lorem Ipsum is simply dummy text of the printing",
-        href: "javascript:void(0)"
+        href: "#"
     },
     {
         icon:
@@ -19,7 +19,7 @@ export default function Home() {
             </svg>,
         title: "Guides",
         desc: "Lorem Ipsum is simply dummy text of the printing",
-        href: "javascript:void(0)"
+        href: "#"
     },
     {
         icon:
@@ -28,7 +28,7 @@ export default function Home() {
             </svg>,
         title: "Support",
         desc: "Lorem Ipsum is simply dummy text of the printing",
-        href: "javascript:void(0)"
+        href: "#"
     }
 ]
 
