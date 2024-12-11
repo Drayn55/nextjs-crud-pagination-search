@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "api//*.js": {
+      "maxDuration": 60
+    }
+  },
+  "build": {
+    "env": {
+      "DISABLE_ESLINT": "true"
+    }
+  }
+}
