@@ -25,7 +25,7 @@ const Contacts = async ({
   
 
   return (
-    <div className="max-w-screen-lg mx-auto mt-5 px-4">
+    <main className="max-w-screen-lg mx-auto mt-5 px-4">
      <Header/>
       <div className="flex items-center justify-between gap-1 mb-5">
         <Search />
@@ -41,7 +41,7 @@ const Contacts = async ({
         <Pagination totalPages={totalPages} />
       </div>
 
-    </div>
+    </main>
   );
 };
 
