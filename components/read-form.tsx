@@ -4,13 +4,14 @@ import { updateContact } from "@/lib/action";
 import { useActionState } from "react";
 import { RedirectButton, SubmitButton } from "./buttons";
 import type { Contact } from "@prisma/client";
+import { formatDate } from "@/lib/utils";
 
-const UpdateForm = ({ contact }: { contact: Contact }) => {
-  const UpdateContactWithId = updateContact.bind(null, contact.id);
-  const [state, formAction] = useActionState(UpdateContactWithId, null);
+const ReadForm = ({ contact }: { contact: Contact }) => {
+  // const UpdateContactWithId = updateContact.bind(null, contact.id)
+  // const [state, formAction] = useActionState(UpdateContactWithId, null);
   return (
     <div className="px-4">
-      <form action={formAction}>
+      <form>
         <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
           <div className="mb-5">
             <label
@@ -23,13 +24,14 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
               type="text"
               name="name"
               id="name"
+              disabled
               placeholder="Full Name...."
               className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               defaultValue={contact.name}
             />
-            <div id="name-error" aria-live="polite" aria-atomic="true">
-              <p className="mt-2 text-sm text-red-500">{state?.Error?.name}</p>
-            </div>
+            {/* <div id="name-error" aria-live="polite" aria-atomic="true">
+            <p className="mt-2 text-sm text-red-500">{state?.Error?.name}</p>
+          </div> */}
           </div>
 
           <div className="mb-5">
@@ -43,13 +45,14 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
               type="text"
               name="phone"
               id="phone"
+              disabled
               placeholder="Phone Number...."
               className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               defaultValue={contact.phone}
             />
-            <div id="phone-error" aria-live="polite" aria-atomic="true">
-              <p className="mt-2 text-sm text-red-500">{state?.Error?.phone}</p>
-            </div>
+            {/* <div id="phone-error" aria-live="polite" aria-atomic="true">
+            <p className="mt-2 text-sm text-red-500">{state?.Error?.phone}</p>
+          </div> */}
           </div>
 
           <div className="mb-5">
@@ -63,13 +66,11 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
               type="text"
               name="nim"
               id="nim"
+              disabled
               placeholder="NIM...."
               className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               defaultValue={contact.nim || ""}
             />
-            <div id="nim-error" aria-live="polite" aria-atomic="true">
-              <p className="mt-2 text-sm text-red-500">{state?.Error?.nim}</p>
-            </div>
           </div>
 
           <div className="mb-5">
@@ -83,15 +84,11 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
               type="text"
               name="nomorVa"
               id="nomorVa"
+              disabled
               placeholder="Nomor Virtual Account...."
               className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               defaultValue={contact.nomorVa || ""}
             />
-            <div id="nomorVa-error" aria-live="polite" aria-atomic="true">
-              <p className="mt-2 text-sm text-red-500">
-                {state?.Error?.nomorVa}
-              </p>
-            </div>
           </div>
 
           <div className="mb-5">
@@ -105,15 +102,11 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
               type="text"
               name="posisi"
               id="posisi"
-              placeholder="Your Username...."
+              disabled
+              placeholder="Your Position...."
               className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               defaultValue={contact.posisi || ""}
             />
-            <div id="posisi-error" aria-live="polite" aria-atomic="true">
-              <p className="mt-2 text-sm text-red-500">
-                {state?.Error?.posisi}
-              </p>
-            </div>
           </div>
 
           <div className="mb-5">
@@ -123,31 +116,60 @@ const UpdateForm = ({ contact }: { contact: Contact }) => {
             >
               Title
             </label>
-
             <input
               type="text"
               name="title"
               id="title"
+              disabled
               placeholder="Your Title...."
               className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               defaultValue={contact.title || ""}
             />
-            <div id="title-error" aria-live="polite" aria-atomic="true">
-              <p className="mt-2 text-sm text-red-500">{state?.Error?.title}</p>
-            </div>
           </div>
-
-
+          <div className="mb-5">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-900"
+            >
+              Creat At
+            </label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              disabled
+              placeholder="Your Title...."
+              className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              defaultValue={formatDate(contact.createdAt.toString())}
+            />
+          </div>
+          <div className="mb-5">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-900"
+            >
+              Update At
+            </label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              disabled
+              placeholder="Your Title...."
+              className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              defaultValue={formatDate(contact.updatedAt.toString())}
+            />
+          </div>
         </div>
-        <div id="message-error" aria-live="polite" aria-atomic="true">
+
+        {/* <div id="message-error" aria-live="polite" aria-atomic="true">
           <p className="mt-2 text-sm text-red-500">{state?.message}</p>
-        </div>
-
-        <SubmitButton label="update" />
+        </div> */}
+        {/* <SubmitButton label="update" /> */}
         <RedirectButton />
       </form>
     </div>
   );
 };
 
-export default UpdateForm;
+export default ReadForm;

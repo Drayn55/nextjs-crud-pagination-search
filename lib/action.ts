@@ -6,8 +6,17 @@ import { z } from "zod";
 
 const ContactSchema = z.object({
   name: z.string().min(6),
-  phone: z.string().min(11),
+  phone: z.string().min(11).max(32),
+  nim: z.string().min(8).max(32),
+  nomorVa: z.string().min(12).max(32),
+  posisi: z.string().min(2).max(32),
+  title: z.string().min(2).max(32),
 });
+
+// export const getContactCount = async () => {
+//   const count = await prisma.contact;
+//   return count;
+// };
 
 export const saveContact = async (prevState: any, formData: FormData) => {
   const validatedFields = ContactSchema.safeParse(
@@ -25,6 +34,10 @@ export const saveContact = async (prevState: any, formData: FormData) => {
       data: {
         name: validatedFields.data.name,
         phone: validatedFields.data.phone,
+        nim: validatedFields.data.nim,
+        nomorVa: validatedFields.data.nomorVa,
+        posisi: validatedFields.data.posisi,
+        title: validatedFields.data.title,
       },
     });
   } catch (error) {
@@ -56,6 +69,10 @@ export const updateContact = async (
       data: {
         name: validatedFields.data.name,
         phone: validatedFields.data.phone,
+        nim: validatedFields.data.nim,
+        nomorVa: validatedFields.data.nomorVa,
+        posisi: validatedFields.data.posisi,
+        title: validatedFields.data.title,
       },
       where: { id },
     });

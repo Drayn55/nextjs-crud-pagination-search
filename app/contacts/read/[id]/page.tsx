@@ -21,7 +21,7 @@
 
 // export default UpdateContactPage
 
-import UpdateForm from "@/components/edit-form";
+import ReadForm from "@/components/read-form";
 import { getContactsById } from "@/lib/data";
 import { notFound } from "next/navigation";
 
@@ -35,8 +35,8 @@ const UpdateContactPage = async ({ params }: { params: Promise<{ id: string }> }
 
   return (
       <div className="max-w-md mx-auto mt-5">
-          <h1 className="text-3xl text-center mb-2">Update Data Mahasiswa</h1>
-          <UpdateForm contact={contact} />
+          <h1 className="text-3xl text-center mb-2">Detail Data Mahasiswa</h1>
+          <ReadForm contact={contact} />
       </div>
   );
 };
