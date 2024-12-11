@@ -7,6 +7,8 @@ import { TableSkeleton } from "@/components/skeleton";
 import { getContactPages } from "@/lib/data";
 import { Suspense } from "react";
 
+/* eslint-disable jsx-a11y/html-has-lang */
+
 const Contacts = async ({
   searchParams,
 }: {
@@ -25,7 +27,7 @@ const Contacts = async ({
   
 
   return (
-    <main className="max-w-screen-lg mx-auto mt-5 px-4">
+    <section className="max-w-screen-lg mx-auto mt-5 px-4">
      <Header/>
       <div className="flex items-center justify-between gap-1 mb-5">
         <Search />
@@ -41,7 +43,7 @@ const Contacts = async ({
         <Pagination totalPages={totalPages} />
       </div>
 
-    </main>
+    </section>
   );
 };
 
