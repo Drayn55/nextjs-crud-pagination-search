@@ -43,7 +43,7 @@ const Contacts = async ({
             </div>
             <div className="overflow-auto">
               {/* <Suspense key={query + currentPage} fallback={<TableSkeleton />}> */}
-                {/* <ContactTable query={query} currentPage={currentPage} /> */}
+                <ContactTable query={query} currentPage={currentPage} />
               {/* </Suspense> */}
             </div>
 
