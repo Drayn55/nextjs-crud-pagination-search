@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NotFound = () => {
+export default function NotFound() {
 
     const navigations = [
         {
@@ -103,5 +103,3 @@ const NotFound = () => {
     </main>
   );
 }
-
-export default NotFound;
